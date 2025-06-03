@@ -15,7 +15,7 @@ def index():
         raw_input = request.form['input_data']
         try:
             parts = raw_input.strip().split('\t')
-            url, top, bottom, right, left = parts[0], int(parts[1]), int(parts[2]), int(parts[3]), int(parts[4])
+            url, left, top, right, bottom = parts[0], int(parts[1]), int(parts[2]), int(parts[3]), int(parts[4])
 
             # Download and decode image
             resp = requests.get(url, stream=True).raw
